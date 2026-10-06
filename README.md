@@ -6,12 +6,22 @@
 
 <p align="center">
   <strong>Stress-Testing the 4D Occupancy Forecasting Chain</strong><br>
-  NeurIPS 2026 &middot; Evaluations and Datasets Track
+  NeurIPS 2026
 </p>
 
 <p align="center">
-  Yu Zheng, Jie Hu, Jiaqi Xiong, Ruiping Liu,<br>
-  Junwei Zheng, Kailun Yang, Jiaming Zhang
+  Y.Zheng<sup>1</sup>, J.Hu<sup>1</sup>, J.Xiong<sup>2</sup>, R.Liu<sup>3</sup>, J.Zheng<sup>3,4</sup>, K.Yang<sup>1</sup>, J.Zhang<sup>1,&dagger;</sup>
+</p>
+
+<p align="center">
+  <sup>1</sup> Hunan University &nbsp;&middot;&nbsp;
+  <sup>2</sup> University of Oxford &nbsp;&middot;&nbsp;
+  <sup>3</sup> Karlsruhe Institute of Technology &nbsp;&middot;&nbsp;
+  <sup>4</sup> ETH Zurich
+</p>
+
+<p align="center">
+  <sup>&dagger;</sup> Corresponding author.
 </p>
 
 <p align="center">
@@ -34,9 +44,11 @@
 
 ## News
 
-- **2026-10-06:** Released the [v0.1.0 codebase](https://github.com/InSAI-Lab/OccStress/tree/v0.1.0), including evaluation tools, model integrations, and reproducible setup guides.
-- **2026-10-06:** Released **OccStress-nuScenes**, **OccStress-Waymo**, and **OccStress-CARLA** on [Hugging Face](https://huggingface.co/datasets/insailab/OccStress), with downloads selectable by dataset, track, and upstream source.
-- **NeurIPS 2026:** OccStress has been accepted to the **Evaluations and Datasets Track**.
+- **2026-10-06:** Released **[Datasets](https://huggingface.co/datasets/insailab/OccStress)**.
+- **2026-10-06:** Released **[Code](https://github.com/InSAI-Lab/OccStress/tree/v0.1.0)**.
+- **2026-10-06:** Released **[Leaderboard](https://insailab.org/OccStress/leaderboard/)**.
+- **2026-10-05:** Paper available on **[arXiv](https://arxiv.org/abs/2512.15621)**.
+- **2026-09-26:** Accepted to **NeurIPS 2026**.
 
 ## Overview
 
@@ -100,11 +112,11 @@ The lightweight core does **not** install the forecasting models. See the
 
 ## Datasets
 
-| Benchmark | Source | Domain | Anchors per protocol |
-| --- | --- | --- | ---: |
-| **OccStress-nuScenes** | nuScenes / Occ3D | Real-world driving | 4,519 |
-| **OccStress-Waymo** | Waymo / Occ3D | Real-world driving | 5,978 |
-| **OccStress-CARLA** | UniOcc CARLA subset | Simulated driving | 330 |
+| Benchmark              | Source              | Domain             | Anchors per protocol |
+| ---------------------- | ------------------- | ------------------ | -------------------: |
+| **OccStress-nuScenes** | nuScenes / Occ3D    | Real-world driving |                4,519 |
+| **OccStress-Waymo**    | Waymo / Occ3D       | Real-world driving |                5,978 |
+| **OccStress-CARLA**    | UniOcc CARLA subset | Simulated driving  |                  330 |
 
 All three use a shared layout with **2 Hz observations and six future targets**.
 The canonical record contains four historical states plus the current state;
@@ -144,14 +156,14 @@ See [dataset layout](docs/DATASETS.md) for the shared `OccStress/` root.
 
 Each method links to its setup and evaluation guide.
 
-| Method | Model input |
-| --- | --- |
-| [OccWorld](EXIST/4D/OccWorld/README_OCCSTRESS.md) | 5 occupancy states |
-| [I2-World](EXIST/4D/II-World/README_OCCSTRESS.md) | 5 occupancy states |
-| [COME](EXIST/4D/COME/README_OCCSTRESS.md) | 4 occupancy states |
-| [GenieDrive](EXIST/4D/GenieDrive/README_OCCSTRESS.md) | 4 occupancy states |
-| [DOME](EXIST/4D/DOME/README_OCCSTRESS.md) | 4 occupancy states |
-| [SparseWorld-TC](EXIST/4D/SparseWorld/README_OCCSTRESS.md) | 5 camera states |
+| Method                                                     | Model input        |
+| ---------------------------------------------------------- | ------------------ |
+| [OccWorld](EXIST/4D/OccWorld/README_OCCSTRESS.md)          | 5 occupancy states |
+| [I$^2$-World](EXIST/4D/II-World/README_OCCSTRESS.md)       | 5 occupancy states |
+| [COME](EXIST/4D/COME/README_OCCSTRESS.md)                  | 4 occupancy states |
+| [GenieDrive](EXIST/4D/GenieDrive/README_OCCSTRESS.md)      | 4 occupancy states |
+| [DOME](EXIST/4D/DOME/README_OCCSTRESS.md)                  | 4 occupancy states |
+| [SparseWorld-TC](EXIST/4D/SparseWorld/README_OCCSTRESS.md) | 5 camera states    |
 
 Occupancy-input methods consume manual or upstream-exported states.
 SparseWorld-TC forecasts directly from cameras and has **no manual-state or
