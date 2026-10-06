@@ -22,6 +22,7 @@
 </p>
 
 <p align="center">
+  <a href="#news">News</a> &nbsp;&middot;&nbsp;
   <a href="#quick-start">Quick Start</a> &nbsp;&middot;&nbsp;
   <a href="#datasets">Datasets</a> &nbsp;&middot;&nbsp;
   <a href="#models">Models</a> &nbsp;&middot;&nbsp;
@@ -30,6 +31,14 @@
 </p>
 
 ---
+
+## News
+
+- **2026-10-06:** Released the [v0.1.0 codebase](https://github.com/InSAI-Lab/OccStress/tree/v0.1.0), including evaluation tools, model integrations, and reproducible setup guides.
+- **2026-10-06:** Released **OccStress-nuScenes**, **OccStress-Waymo**, and **OccStress-CARLA** on [Hugging Face](https://huggingface.co/datasets/insailab/OccStress), with downloads selectable by dataset, track, and upstream source.
+- **NeurIPS 2026:** OccStress has been accepted to the **Evaluations and Datasets Track**.
+
+## Overview
 
 **How do perception errors affect future occupancy forecasts?** OccStress is a
 benchmark for evaluating robustness across the occupancy forecasting chain,
@@ -40,10 +49,6 @@ from camera/LiDAR inputs to 3D occupancy states and multi-horizon 4D predictions
 <p align="center">
   <strong>3 datasets &middot; 21 corruption families &middot; 61 severity configurations &middot; 6 future horizons</strong>
 </p>
-
-**2026-10-06:** All three benchmark datasets are now available on
-[Hugging Face](https://huggingface.co/datasets/insailab/OccStress), with
-verified archives and downloads selectable by dataset, track and upstream source.
 
 ## Benchmark
 
