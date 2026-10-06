@@ -1,0 +1,30 @@
+# Python 3.10 / PyTorch 2.0.1 direct requirements for CUDA 11.8.
+# Small A100 checks passed; other GPU architectures need their own validation.
+numpy==1.24.3
+pandas==1.5.3
+scipy==1.10.1
+numba==0.57.1
+llvmlite==0.40.1
+mmengine==0.8.4
+opencv-python==4.9.0.80
+Pillow==9.4.0
+matplotlib==3.5.2
+einops==0.7.0
+timm==0.9.7
+xformers==0.0.22
+diffusers==0.24.0
+huggingface-hub==0.25.2
+pyquaternion==0.9.9
+nuscenes-devkit==1.1.10
+tensorboard==2.14.0
+yapf==0.40.1
+addict==2.4.0
+PyYAML==6.0.1
+torchmetrics==1.2.0
+pytorch-lightning==2.1.0
+lightning==2.1.0
+scikit-learn==1.3.2
+scikit-image==0.21.0
+plyfile==1.0.3
+tqdm==4.67.1
+tabulate==0.9.0

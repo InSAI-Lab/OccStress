@@ -1,0 +1,7 @@
+# CPU utilities only; model/CUDA environments are deliberately separate.
+numpy>=1.24,<2
+scipy>=1.10
+Pillow>=9
+matplotlib>=3.7
+pyquaternion>=0.9.9
+PyYAML>=6

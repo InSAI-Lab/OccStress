@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "status": "internal_small_sample_gates_passed_public_source_availability_separate",
+  "note": "camera_only is a legacy output-path category, not sufficient evidence of sensor modality. Use sensor_inputs and corrupted_sensor below.",
+  "sources": [
+    {
+      "id": "cvtocc-waymo-camera",
+      "dataset": "waymo",
+      "environment": "cvtocc",
+      "directory": "EXIST/3D/CVT-Occ",
+      "config": "projects/configs/occstress/cvtocc_waymo_local_2hz.py",
+      "sensor_inputs": [
+        "camera"
+      ],
+      "corrupted_sensor": "camera",
+      "native_classes": 16,
+      "export_classes": 18,
+      "temporal_source_queue": 7,
+      "exporter": "scripts/waymo/export_cvtocc_waymo_upstream.py",
+      "protocol_builder": "scripts/waymo/build_cvtocc_waymo_upstream_protocols.py",
+      "checkpoint_training_dataset": "Waymo",
+      "frames": 7998,
+      "protocols": 73,
+      "source_status": "included_permission_unconfirmed"
+    },
+    {
+      "id": "effocc-waymo-point",
+      "dataset": "waymo",
+      "environment": "effocc",
+      "directory": "EXIST/3D/EFFOcc",
+      "config": "configs/effocc_waymo/flashocc-fusion-waymoD1-1f.py",
+      "sensor_inputs": [
+        "camera",
+        "lidar"
+      ],
+      "corrupted_sensor": "lidar",
+      "native_classes": 16,
+      "export_classes": 18,
+      "exporter": "scripts/waymo/export_effocc_waymo_upstream.py",
+      "protocol_builder": "scripts/waymo/build_effocc_waymo_upstream_protocols.py",
+      "checkpoint_training_dataset": "Waymo",
+      "frames": 7998,
+      "protocols": 73,
+      "source_status": "included_subject_to_component_terms"
+    },
+    {
+      "id": "effocc-waymo-camera-stress",
+      "dataset": "waymo",
+      "environment": "effocc",
+      "directory": "EXIST/3D/EFFOcc",
+      "config": "configs/effocc_waymo/flashocc-fusion-waymoD1-1f.py",
+      "sensor_inputs": [
+        "camera",
+        "lidar"
+      ],
+      "corrupted_sensor": "camera",
+      "native_classes": 16,
+      "export_classes": 18,
+      "exporter": "scripts/waymo/export_effocc_waymo_camera_upstream.py",
+      "protocol_builder": "scripts/waymo/build_effocc_waymo_camera_upstream_protocols.py",
+      "checkpoint_training_dataset": "Waymo",
+      "frames": 7998,
+      "protocols": 73,
+      "source_status": "included_subject_to_component_terms"
+    },
+    {
+      "id": "flashocc-carla-camera",
+      "dataset": "carla",
+      "environment": "flashocc",
+      "directory": "EXIST/3D/EFFOcc",
+      "config": "configs/effocc_carla/flashocc-r50-carla-balanced-ft.py",
+      "sensor_inputs": [
+        "camera"
+      ],
+      "corrupted_sensor": "camera",
+      "native_classes": 11,
+      "export_classes": 18,
+      "exporter": "scripts/carla/export_effocc_carla_upstream.py",
+      "protocol_builder": "scripts/carla/build_carla_upstream_protocols.py",
+      "checkpoint_training_dataset": "CARLA train, balanced fine-tuning",
+      "frames": 360,
+      "protocols": 73,
+      "source_status": "included_subject_to_component_terms"
+    },
+    {
+      "id": "effocc-carla-point",
+      "dataset": "carla",
+      "environment": "effocc",
+      "directory": "EXIST/3D/EFFOcc",
+      "config": "configs/effocc_carla/effocc-fusion-r18-carla-balanced-ft.py",
+      "sensor_inputs": [
+        "camera",
+        "lidar"
+      ],
+      "corrupted_sensor": "lidar",
+      "native_classes": 11,
+      "export_classes": 18,
+      "exporter": "scripts/carla/export_effocc_carla_upstream.py",
+      "protocol_builder": "scripts/carla/build_carla_upstream_protocols.py",
+      "checkpoint_training_dataset": "CARLA train, balanced fine-tuning",
+      "frames": 360,
+      "protocols": 73,
+      "source_status": "included_subject_to_component_terms"
+    }
+  ]
+}

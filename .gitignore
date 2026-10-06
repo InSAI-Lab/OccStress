@@ -1,0 +1,73 @@
+# OS / editor noise
+.DS_Store
+/checkpoints/
+/runtime/
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.venv/
+venv/
+env/
+dist/
+build/
+*.egg-info/
+
+# Dataset mount points. Keep docs, never commit dataset contents or local symlinks.
+/data/*
+!/data/README.md
+
+# Generated outputs and local runtime state
+/downloads/
+/logs/
+/outputs/
+/tmp/
+/work_dirs/
+/work_dir/
+/results/*
+!/results/reference/
+*.done.json
+*.json.lock
+**/logs/
+**/outputs/
+**/tmp_results/
+**/work_dirs/
+**/work_dir/
+**/wandb/
+slurm-*.out
+slurm-*.err
+nohup.out
+
+# Model weights, archives, and generated binary artifacts
+*.npz
+*.npy
+*.pkl
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.engine
+*.whl
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.so
+*.pyd
+*.dll
+
+# Local document exports
+/Clean Proposal.pdf

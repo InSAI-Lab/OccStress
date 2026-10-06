@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "note": "Dry-run example. Replace paths and include every checkpoint/base-info/protocol/config asset consumed by the native model in inputs. Native sharding flags remain model-specific.",
+  "tasks": [{
+    "id": "geniedrive-waymo-clean",
+    "model": "geniedrive",
+    "dataset": "waymo",
+    "python": "/opt/envs/geniedrive/bin/python",
+    "expected_records": 5978,
+    "env": {"CUDA_VISIBLE_DEVICES": "0", "OCCSTRESS_DATA_ROOT": "/datasets/OccStress"},
+    "inputs": {
+      "checkpoint": "/checkpoints/genie_occ.pth",
+      "base_info": "/datasets/OccStress/meta/OccStress-Waymo/controls.json",
+      "protocol": "/datasets/OccStress/protocols/manual/OccStress-Waymo/clean/H4_F6_val_backbone.pkl"
+    },
+    "native_output": "/results/geniedrive/waymo-clean.native.json",
+    "native_args": ["--checkpoint", "/checkpoints/genie_occ.pth", "--base-info", "/datasets/OccStress/meta/OccStress-Waymo/controls.json", "--protocol", "/datasets/OccStress/protocols/manual/OccStress-Waymo/clean/H4_F6_val_backbone.pkl", "--output-json", "/results/geniedrive/waymo-clean.native.json"]
+  }]
+}

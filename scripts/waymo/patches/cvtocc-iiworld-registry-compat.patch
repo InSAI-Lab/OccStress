@@ -1,0 +1,50 @@
+diff --git a/projects/mmdet3d_plugin/core/bbox/assigners/hungarian_assigner_3d.py b/projects/mmdet3d_plugin/core/bbox/assigners/hungarian_assigner_3d.py
+index af11741..e78babe 100644
+--- a/projects/mmdet3d_plugin/core/bbox/assigners/hungarian_assigner_3d.py
++++ b/projects/mmdet3d_plugin/core/bbox/assigners/hungarian_assigner_3d.py
+@@ -13,7 +13,7 @@ except ImportError:
+     linear_sum_assignment = None
+ 
+ 
+-@BBOX_ASSIGNERS.register_module()
++@BBOX_ASSIGNERS.register_module(force=True)
+ class HungarianAssigner3D(BaseAssigner):
+     """Computes one-to-one matching between predictions and ground truth.
+     This class computes an assignment between the targets and the predictions
+diff --git a/projects/mmdet3d_plugin/datasets/__init__.py b/projects/mmdet3d_plugin/datasets/__init__.py
+index 98f5d0e..bdcaeb7 100644
+--- a/projects/mmdet3d_plugin/datasets/__init__.py
++++ b/projects/mmdet3d_plugin/datasets/__init__.py
+@@ -1,6 +1,12 @@
+-from .nuscenes_dataset import CustomNuScenesDataset
+-from .nuscenes_occ import NuSceneOcc
++import os
++
+ from .builder import custom_build_dataset
+ from .waymo_temporal_zlt import CustomWaymoDataset_T
+ 
+-__all__ = ["CustomNuScenesDataset", "NuSceneOcc", "CustomWaymoDataset_T"]
++__all__ = ["CustomWaymoDataset_T"]
++
++if os.environ.get("CVTOCC_WAYMO_ONLY") != "1":
++    from .nuscenes_dataset import CustomNuScenesDataset
++    from .nuscenes_occ import NuSceneOcc
++
++    __all__ += ["CustomNuScenesDataset", "NuSceneOcc"]
+diff --git a/projects/mmdet3d_plugin/bevformer/detectors/__init__.py b/projects/mmdet3d_plugin/bevformer/detectors/__init__.py
+--- a/projects/mmdet3d_plugin/bevformer/detectors/__init__.py
++++ b/projects/mmdet3d_plugin/bevformer/detectors/__init__.py
+@@ -1,5 +1,9 @@
+-from .occformer import CVTOcc
++import os
++
+ from .occformer_waymo import CVTOccWaymo
+-from .centerpoint_solo import CenterPoint_solo
+-from .bevdet_solo import BEVDet_solo
+-from .solofusion import SOLOFusion
++
++if os.environ.get("CVTOCC_WAYMO_ONLY") != "1":
++    from .occformer import CVTOcc
++    from .centerpoint_solo import CenterPoint_solo
++    from .bevdet_solo import BEVDet_solo
++    from .solofusion import SOLOFusion

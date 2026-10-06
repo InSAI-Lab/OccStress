@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "profile": "full_source_candidate",
+  "public_redistribution_ready": false,
+  "note": "full_source_candidate includes all prepared model integrations and helpers. pending_components records unresolved license findings, not missing source; excluded_paths is used only by the optional public_candidate filtered build. Source inclusion does not establish redistribution permission, relicense third-party code, or include data and weights.",
+  "pending_components": [
+    {
+      "id": "sparseworld-tc",
+      "name": "SparseWorld-TC",
+      "directory": "EXIST/4D/SparseWorld",
+      "upstream_url": "https://github.com/MSunDYY/SparseWorld",
+      "audited_revision": "14f5fe3bdd3428002d913988fbfd9b653a1a207e",
+      "status": "pending_upstream_permission",
+      "contact_status": "not_contacted",
+      "excluded_paths": [
+        "EXIST/4D/SparseWorld"
+      ]
+    },
+    {
+      "id": "cvtocc",
+      "name": "CVT-Occ",
+      "directory": "EXIST/3D/CVT-Occ",
+      "upstream_url": "https://github.com/Tsinghua-MARS-Lab/CVT-Occ",
+      "audited_revision": "42c1d4e49d5f170840e991db1c3d73f56791d53f",
+      "status": "pending_upstream_permission",
+      "contact_status": "not_contacted",
+      "excluded_paths": [
+        "EXIST/3D/CVT-Occ",
+        "scripts/waymo/build_cvtocc_waymo_upstream_protocols.py",
+        "scripts/waymo/eval_cvtocc_waymo_protocol.py",
+        "scripts/waymo/export_cvtocc_waymo_upstream.py",
+        "scripts/waymo/prepare_cvtocc_waymo_2hz.py",
+        "scripts/waymo/patches/cvtocc-iiworld-registry-compat.patch"
+      ]
+    },
+    {
+      "id": "fusionocc",
+      "name": "FusionOcc",
+      "directory": "EXIST/3D/FusionOcc",
+      "upstream_url": "https://github.com/ShuoZhang-code/FusionOcc",
+      "audited_revision": "83ded3884b98b299d35d636a91e9aa2a92d89221",
+      "status": "pending_upstream_permission",
+      "contact_status": "not_contacted",
+      "excluded_paths": [
+        "EXIST/3D/FusionOcc",
+        "scripts/fusionocc"
+      ]
+    },
+    {
+      "id": "sdgocc",
+      "name": "SDGOcc",
+      "directory": "EXIST/3D/SDGOCC",
+      "upstream_url": "https://github.com/DzpLab/SDGOCC",
+      "audited_revision": "bd63c00b2ba4cbd120077a8a468b8e36a7749154",
+      "status": "pending_upstream_permission",
+      "contact_status": "not_contacted",
+      "excluded_paths": [
+        "EXIST/3D/SDGOCC",
+        "scripts/sdgocc"
+      ]
+    },
+    {
+      "id": "occfusion",
+      "name": "OccFusion",
+      "directory": "EXIST/3D/OccFusion",
+      "upstream_url": "https://github.com/DanielMing123/OccFusion",
+      "audited_revision": "193a3c3cb38a8ca8978be54c98e436eb96b5e8c3",
+      "status": "pending_upstream_permission",
+      "contact_status": "not_contacted",
+      "excluded_paths": [
+        "EXIST/3D/OccFusion",
+        "scripts/occfusion"
+      ]
+    }
+  ]
+}

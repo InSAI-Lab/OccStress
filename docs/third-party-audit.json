@@ -1,0 +1,377 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-05",
+  "scope": "Repository-wide declarations, imported license omissions and identified restrictive components; not exhaustive file-level legal clearance.",
+  "public_redistribution_ready": false,
+  "unresolved_components": [
+    "CVT-Occ",
+    "FusionOcc",
+    "OccFusion",
+    "SDGOcc",
+    "SparseWorld"
+  ],
+  "restricted_components": [
+    "FBBEV",
+    "PanoOcc",
+    "RoboBEV",
+    "Robo3D",
+    "Robo3D/fog"
+  ],
+  "components": [
+    {
+      "component": "ALOcc",
+      "directory": "EXIST/3D/ALOcc",
+      "repository": "https://github.com/cdb342/ALOcc",
+      "checked_upstream_revision": "1bfd7de43b816a1a0e025e9a00a187bbf19daf15",
+      "license_evidence_revision": "1bfd7de43b816a1a0e025e9a00a187bbf19daf15",
+      "upstream_tree_url": "https://api.github.com/repos/cdb342/ALOcc/git/trees/03d3e26ba3085f527b38696dddd5fa03d388d4e3?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "LICENSE"
+      ],
+      "declared_license": "Apache-2.0",
+      "status": "license_recorded",
+      "license_evidence_url": "https://github.com/cdb342/ALOcc/blob/1bfd7de43b816a1a0e025e9a00a187bbf19daf15/LICENSE",
+      "local_notice": "EXIST/3D/ALOcc/LICENSE",
+      "local_notice_matches_checked_license": true
+    },
+    {
+      "component": "BEVFormer",
+      "directory": "EXIST/3D/BEVFormer",
+      "repository": "https://github.com/fundamentalvision/BEVFormer",
+      "checked_upstream_revision": "66b65f3a1f58caf0507cb2a971b9c0e7f842376c",
+      "license_evidence_revision": "66b65f3a1f58caf0507cb2a971b9c0e7f842376c",
+      "upstream_tree_url": "https://api.github.com/repos/fundamentalvision/BEVFormer/git/trees/f17b285d0effa6de77f78de1aee5e5169d45236f?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "LICENSE"
+      ],
+      "declared_license": "Apache-2.0",
+      "status": "license_recorded",
+      "license_evidence_url": "https://github.com/fundamentalvision/BEVFormer/blob/66b65f3a1f58caf0507cb2a971b9c0e7f842376c/LICENSE",
+      "local_notice": "EXIST/3D/BEVFormer/LICENSE",
+      "local_notice_matches_checked_license": true
+    },
+    {
+      "component": "COTR",
+      "directory": "EXIST/3D/COTR",
+      "repository": "https://github.com/NotACracker/COTR",
+      "checked_upstream_revision": "4328e0abcd1360d950bef4d1c8cbe950a01aaced",
+      "license_evidence_revision": "4328e0abcd1360d950bef4d1c8cbe950a01aaced",
+      "upstream_tree_url": "https://api.github.com/repos/NotACracker/COTR/git/trees/390121be7dc819dce72e54560afcc0079ccfdfef?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "LICENSE"
+      ],
+      "declared_license": "Apache-2.0",
+      "status": "omitted_license_restored",
+      "license_evidence_url": "https://github.com/NotACracker/COTR/blob/4328e0abcd1360d950bef4d1c8cbe950a01aaced/LICENSE",
+      "local_notice": "EXIST/3D/COTR/LICENSE",
+      "local_notice_matches_checked_license": true
+    },
+    {
+      "component": "FBBEV",
+      "directory": "EXIST/3D/FBBEV",
+      "repository": "https://github.com/NVlabs/FB-BEV",
+      "checked_upstream_revision": "6e25469256d98e7fcb52cc43efe812dc2fd2b446",
+      "license_evidence_revision": "6e25469256d98e7fcb52cc43efe812dc2fd2b446",
+      "upstream_tree_url": "https://api.github.com/repos/NVlabs/FB-BEV/git/trees/c428ac7bd504807dd6650242878747b25e34f638?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "LICENSE"
+      ],
+      "declared_license": "LicenseRef-NVIDIA-Source-Code-NC",
+      "status": "license_recorded",
+      "license_evidence_url": "https://github.com/NVlabs/FB-BEV/blob/6e25469256d98e7fcb52cc43efe812dc2fd2b446/LICENSE",
+      "local_notice": "EXIST/3D/FBBEV/LICENSE",
+      "local_notice_matches_checked_license": true
+    },
+    {
+      "component": "FusionOcc",
+      "directory": "EXIST/3D/FusionOcc",
+      "repository": "https://github.com/ShuoZhang-code/FusionOcc",
+      "checked_upstream_revision": "83ded3884b98b299d35d636a91e9aa2a92d89221",
+      "license_evidence_revision": "83ded3884b98b299d35d636a91e9aa2a92d89221",
+      "upstream_tree_url": "https://api.github.com/repos/ShuoZhang-code/FusionOcc/git/trees/686df4ff78b53ca5790e36668d98ea2c94cb9f0c?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [],
+      "declared_license": null,
+      "status": "permission_unresolved",
+      "license_evidence_url": "https://github.com/ShuoZhang-code/FusionOcc/tree/83ded3884b98b299d35d636a91e9aa2a92d89221",
+      "finding": "No repository-wide grant found in the complete source tree notice inventory or root README; nested licenses do not cover the whole method."
+    },
+    {
+      "component": "OccFusion",
+      "directory": "EXIST/3D/OccFusion",
+      "repository": "https://github.com/DanielMing123/OccFusion",
+      "checked_upstream_revision": "193a3c3cb38a8ca8978be54c98e436eb96b5e8c3",
+      "license_evidence_revision": "193a3c3cb38a8ca8978be54c98e436eb96b5e8c3",
+      "upstream_tree_url": "https://api.github.com/repos/DanielMing123/OccFusion/git/trees/bbe6e2cb17fa7653200e4760801d4677b49fee02?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [],
+      "declared_license": null,
+      "status": "permission_unresolved",
+      "license_evidence_url": "https://github.com/DanielMing123/OccFusion/tree/193a3c3cb38a8ca8978be54c98e436eb96b5e8c3",
+      "finding": "No repository-wide grant found in the complete source tree notice inventory or root README; nested licenses do not cover the whole method."
+    },
+    {
+      "component": "PanoOcc",
+      "directory": "EXIST/3D/PanoOcc",
+      "repository": "https://github.com/Robertwyq/PanoOcc",
+      "checked_upstream_revision": "3d93b119fcced35612af05587b395e8b38d8271f",
+      "license_evidence_revision": "3d93b119fcced35612af05587b395e8b38d8271f",
+      "upstream_tree_url": "https://api.github.com/repos/Robertwyq/PanoOcc/git/trees/2658f0baed650a9d8c4f3637124e445936bfa14f?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "LICENSE",
+        "mmdetection3d/LICENSE"
+      ],
+      "declared_license": "GPL-3.0",
+      "status": "license_recorded",
+      "license_evidence_url": "https://github.com/Robertwyq/PanoOcc/blob/3d93b119fcced35612af05587b395e8b38d8271f/LICENSE",
+      "local_notice": "EXIST/3D/PanoOcc/LICENSE",
+      "local_notice_matches_checked_license": true
+    },
+    {
+      "component": "SDGOcc",
+      "directory": "EXIST/3D/SDGOCC",
+      "repository": "https://github.com/DzpLab/SDGOCC",
+      "checked_upstream_revision": "bd63c00b2ba4cbd120077a8a468b8e36a7749154",
+      "license_evidence_revision": "bd63c00b2ba4cbd120077a8a468b8e36a7749154",
+      "upstream_tree_url": "https://api.github.com/repos/DzpLab/SDGOCC/git/trees/22bae5e9689293f3e8b5a195dd1959654784c5db?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [],
+      "declared_license": null,
+      "status": "permission_unresolved",
+      "license_evidence_url": "https://github.com/DzpLab/SDGOCC/tree/bd63c00b2ba4cbd120077a8a468b8e36a7749154",
+      "finding": "No repository-wide grant found in the complete source tree notice inventory or root README; nested licenses do not cover the whole method."
+    },
+    {
+      "component": "SparseOcc",
+      "directory": "EXIST/3D/SparseOcc",
+      "repository": "https://github.com/MCG-NJU/SparseOcc",
+      "checked_upstream_revision": "af4d9df83bfd1b82c2b095fca793ff7ba49d5e9f",
+      "license_evidence_revision": "af4d9df83bfd1b82c2b095fca793ff7ba49d5e9f",
+      "upstream_tree_url": "https://api.github.com/repos/MCG-NJU/SparseOcc/git/trees/9ebba9024c61de34aaaf75a5e0e81b8f5c864002?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "LICENSE"
+      ],
+      "declared_license": "Apache-2.0",
+      "status": "license_recorded",
+      "license_evidence_url": "https://github.com/MCG-NJU/SparseOcc/blob/af4d9df83bfd1b82c2b095fca793ff7ba49d5e9f/LICENSE",
+      "local_notice": "EXIST/3D/SparseOcc/LICENSE",
+      "local_notice_matches_checked_license": true
+    },
+    {
+      "component": "STCOcc",
+      "directory": "EXIST/3D/STCOcc",
+      "repository": "https://github.com/lzzzzzm/STCOcc",
+      "checked_upstream_revision": "23a4a346a30ab1242ef99a54bac14d4c4c67e08c",
+      "license_evidence_revision": "23a4a346a30ab1242ef99a54bac14d4c4c67e08c",
+      "upstream_tree_url": "https://api.github.com/repos/lzzzzzm/STCOcc/git/trees/eb930139ea4c854521c050ed96d5cf17aa90b098?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "LICENSE"
+      ],
+      "declared_license": "MIT",
+      "status": "license_recorded",
+      "license_evidence_url": "https://github.com/lzzzzzm/STCOcc/blob/23a4a346a30ab1242ef99a54bac14d4c4c67e08c/LICENSE",
+      "local_notice": "EXIST/3D/STCOcc/LICENSE",
+      "local_notice_matches_checked_license": true
+    },
+    {
+      "component": "ViewFormerOcc",
+      "directory": "EXIST/3D/ViewFormerOcc",
+      "repository": "https://github.com/ViewFormerOcc/ViewFormer-Occ",
+      "checked_upstream_revision": "bba311100210ec34bd79e256acec1a61e238df0b",
+      "license_evidence_revision": "bba311100210ec34bd79e256acec1a61e238df0b",
+      "upstream_tree_url": "https://api.github.com/repos/ViewFormerOcc/ViewFormer-Occ/git/trees/01aeda4c4a7456c633dca170b0377b8e861d6844?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "LICENSE"
+      ],
+      "declared_license": "Apache-2.0",
+      "status": "license_recorded",
+      "license_evidence_url": "https://github.com/ViewFormerOcc/ViewFormer-Occ/blob/bba311100210ec34bd79e256acec1a61e238df0b/LICENSE",
+      "local_notice": "EXIST/3D/ViewFormerOcc/LICENSE",
+      "local_notice_matches_checked_license": true
+    },
+    {
+      "component": "COME",
+      "directory": "EXIST/4D/COME",
+      "repository": "https://github.com/synsin0/COME",
+      "checked_upstream_revision": "d88378b43e37ef17c108ff0213646db568d0879b",
+      "license_evidence_revision": "d88378b43e37ef17c108ff0213646db568d0879b",
+      "upstream_tree_url": "https://api.github.com/repos/synsin0/COME/git/trees/402e03e4abd96b8e3950651228d8711f4a9e4fcb?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "LICENSE"
+      ],
+      "declared_license": "Apache-2.0",
+      "status": "license_recorded",
+      "license_evidence_url": "https://github.com/synsin0/COME/blob/d88378b43e37ef17c108ff0213646db568d0879b/LICENSE",
+      "local_notice": "EXIST/4D/COME/LICENSE",
+      "local_notice_matches_checked_license": true
+    },
+    {
+      "component": "II-World",
+      "directory": "EXIST/4D/II-World",
+      "repository": "https://github.com/lzzzzzm/II-World",
+      "checked_upstream_revision": "661d830f9b34ee03ce368db164a72753ab8764a3",
+      "license_evidence_revision": "2b487f894b46ed82383dd9d5d8f8a85feba30f42",
+      "upstream_tree_url": "https://api.github.com/repos/lzzzzzm/II-World/git/trees/57fbeec71629efbdfae09eb243f1a892dbd023d3?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [],
+      "declared_license": "MIT",
+      "status": "imported_base_license_restored",
+      "license_evidence_url": "https://github.com/lzzzzzm/II-World/blob/2b487f894b46ed82383dd9d5d8f8a85feba30f42/LICENSE",
+      "local_notice": "EXIST/4D/II-World/LICENSE",
+      "local_notice_matches_checked_license": true,
+      "finding": "Experimental checkout HEAD is the MIT-licensed parent; later upstream commit deletes LICENSE. Restored that exact parent notice, not a grant inferred from the later HEAD."
+    },
+    {
+      "component": "OccWorld",
+      "directory": "EXIST/4D/OccWorld",
+      "repository": "https://github.com/wzzheng/OccWorld",
+      "checked_upstream_revision": "1ee7f77ecc4c984a4f7f6411d95c2e6e73806b6e",
+      "license_evidence_revision": "1ee7f77ecc4c984a4f7f6411d95c2e6e73806b6e",
+      "upstream_tree_url": "https://api.github.com/repos/wzzheng/OccWorld/git/trees/79fd88a4360fd169f2592e062e17bf99fefa0e20?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "LICENSE"
+      ],
+      "declared_license": "Apache-2.0",
+      "status": "license_recorded",
+      "license_evidence_url": "https://github.com/wzzheng/OccWorld/blob/1ee7f77ecc4c984a4f7f6411d95c2e6e73806b6e/LICENSE",
+      "local_notice": "EXIST/4D/OccWorld/LICENSE",
+      "local_notice_matches_checked_license": true
+    },
+    {
+      "component": "GenieDrive",
+      "directory": "EXIST/4D/GenieDrive",
+      "repository": "https://github.com/Huster-YZY/GenieDrive",
+      "checked_upstream_revision": "da48a529ffbe14136688e9b7a56f5d1061c366c5",
+      "license_evidence_revision": "da48a529ffbe14136688e9b7a56f5d1061c366c5",
+      "upstream_tree_url": "https://api.github.com/repos/Huster-YZY/GenieDrive/git/trees/ebb8e7fb28e6bd1fba808b0a76d578fa951b78a3?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "LICENSE",
+        "occ_rasterizer/diff-gaussian-rasterization/LICENSE.md",
+        "occ_rasterizer/diff-gaussian-rasterization/third_party/glm/copying.txt",
+        "occ_render/LICENSE"
+      ],
+      "declared_license": "MIT",
+      "status": "license_recorded",
+      "license_evidence_url": "https://github.com/Huster-YZY/GenieDrive/blob/da48a529ffbe14136688e9b7a56f5d1061c366c5/LICENSE",
+      "local_notice": "EXIST/4D/GenieDrive/LICENSE",
+      "local_notice_matches_checked_license": true
+    },
+    {
+      "component": "DOME",
+      "directory": "EXIST/4D/DOME",
+      "repository": "https://github.com/gusongen/DOME",
+      "checked_upstream_revision": "02677f93cf5056daaceb8ccf52d328bdf3635183",
+      "license_evidence_revision": "02677f93cf5056daaceb8ccf52d328bdf3635183",
+      "upstream_tree_url": "https://api.github.com/repos/gusongen/DOME/git/trees/e1c80a804d789dc3caad868da8add81f33adaa53?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "LICENSE"
+      ],
+      "declared_license": "Apache-2.0",
+      "status": "license_recorded",
+      "license_evidence_url": "https://github.com/gusongen/DOME/blob/02677f93cf5056daaceb8ccf52d328bdf3635183/LICENSE",
+      "local_notice": "EXIST/4D/DOME/LICENSE",
+      "local_notice_matches_checked_license": true
+    },
+    {
+      "component": "EFFOcc",
+      "directory": "EXIST/3D/EFFOcc",
+      "repository": "https://github.com/synsin0/EFFOcc",
+      "checked_upstream_revision": "13aeb78c2774f2f3dd447166d1f8f5168fd8059d",
+      "license_evidence_revision": "13aeb78c2774f2f3dd447166d1f8f5168fd8059d",
+      "upstream_tree_url": "https://api.github.com/repos/synsin0/EFFOcc/git/trees/f8b8a19b49dcfe6766c77b37ebe7381034812e06?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "LICENSE"
+      ],
+      "declared_license": "Apache-2.0",
+      "status": "license_recorded",
+      "license_evidence_url": "https://github.com/synsin0/EFFOcc/blob/13aeb78c2774f2f3dd447166d1f8f5168fd8059d/LICENSE",
+      "local_notice": "EXIST/3D/EFFOcc/LICENSE",
+      "local_notice_matches_checked_license": true
+    },
+    {
+      "component": "CVT-Occ",
+      "directory": "EXIST/3D/CVT-Occ",
+      "repository": "https://github.com/Tsinghua-MARS-Lab/CVT-Occ",
+      "checked_upstream_revision": "42c1d4e49d5f170840e991db1c3d73f56791d53f",
+      "license_evidence_revision": "42c1d4e49d5f170840e991db1c3d73f56791d53f",
+      "upstream_tree_url": "https://api.github.com/repos/Tsinghua-MARS-Lab/CVT-Occ/git/trees/c992149e89d2e3c0c6f6948e03bdd9bc7e0834b0?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [],
+      "declared_license": null,
+      "status": "permission_unresolved",
+      "license_evidence_url": "https://github.com/Tsinghua-MARS-Lab/CVT-Occ/tree/42c1d4e49d5f170840e991db1c3d73f56791d53f",
+      "finding": "No repository-wide grant found in the complete source tree notice inventory or root README; nested licenses do not cover the whole method."
+    },
+    {
+      "component": "SparseWorld",
+      "directory": "EXIST/4D/SparseWorld",
+      "repository": "https://github.com/MSunDYY/SparseWorld",
+      "checked_upstream_revision": "14f5fe3bdd3428002d913988fbfd9b653a1a207e",
+      "license_evidence_revision": "14f5fe3bdd3428002d913988fbfd9b653a1a207e",
+      "upstream_tree_url": "https://api.github.com/repos/MSunDYY/SparseWorld/git/trees/81a26a4fe4f25d506448fc13c06428f6247561fd?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "AD-MLP/deps/stp3/LICENSE"
+      ],
+      "declared_license": null,
+      "status": "permission_unresolved",
+      "license_evidence_url": "https://github.com/MSunDYY/SparseWorld/tree/14f5fe3bdd3428002d913988fbfd9b653a1a207e",
+      "finding": "No repository-wide grant found in the complete source tree notice inventory or root README; nested licenses do not cover the whole method."
+    },
+    {
+      "component": "RoboBEV",
+      "directory": null,
+      "repository": "https://github.com/Daniel-xsy/RoboBEV",
+      "checked_upstream_revision": "3a32edaba9434dc27791bd25a1168951d091bd89",
+      "license_evidence_revision": "3a32edaba9434dc27791bd25a1168951d091bd89",
+      "upstream_tree_url": "https://api.github.com/repos/Daniel-xsy/RoboBEV/git/trees/07c2e19d87f6160a83cbb5d557a44e059ab0f3d8?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "zoo/BEVDet/LICENSE",
+        "zoo/BEVFormer/LICENSE",
+        "zoo/BEVFusion/LICENSE",
+        "zoo/CVT/LICENSE",
+        "zoo/DETR3D/LICENSE",
+        "zoo/PETR/LICENSE",
+        "zoo/PolarFormer/LICENSE",
+        "zoo/SOLOFusion/LICENSE",
+        "zoo/SRCN3D/LICENSE"
+      ],
+      "declared_license": "CC-BY-NC-SA-4.0",
+      "status": "restricted_terms_review",
+      "license_evidence_url": "https://github.com/Daniel-xsy/RoboBEV/blob/3a32edaba9434dc27791bd25a1168951d091bd89/README.md#license",
+      "finding": "README declares CC-BY-NC-SA-4.0 with operator-specific exceptions. Review adapted source boundaries; external assets are not bundled."
+    },
+    {
+      "component": "Robo3D",
+      "directory": null,
+      "repository": "https://github.com/worldbench/Robo3D",
+      "checked_upstream_revision": "481a3b8634b2d291b84736cab1b546ed266efafa",
+      "license_evidence_revision": "481a3b8634b2d291b84736cab1b546ed266efafa",
+      "upstream_tree_url": "https://api.github.com/repos/worldbench/Robo3D/git/trees/3136929da6387028f913bc13577e9aaf44b48158?recursive=1",
+      "upstream_tree_complete": true,
+      "upstream_notice_paths": [
+        "create/kitti_c/fog/LICENSE",
+        "create/nuscenes_c/fog/LICENSE",
+        "create/semantickitti_c/fog/LICENSE"
+      ],
+      "declared_license": "CC-BY-NC-SA-4.0",
+      "status": "restricted_terms_review",
+      "license_evidence_url": "https://github.com/worldbench/Robo3D/blob/481a3b8634b2d291b84736cab1b546ed266efafa/README.md#license",
+      "finding": "README declares CC-BY-NC-SA-4.0 with operator-specific exceptions. Review adapted source boundaries; external assets are not bundled."
+    }
+  ]
+}

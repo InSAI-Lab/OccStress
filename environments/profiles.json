@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "fresh_install_verified": false,
+  "note": "One prefix per model, even when two recipes share versions. Pinned direct requirements are not portable transitive lockfiles. See docs/ENVIRONMENTS.md for validation scope.",
+  "recipes": {
+    "legacy-mmcv172-cu128": {
+      "python": "3.9",
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "cuda": "12.8",
+      "index": "cu128",
+      "mmcv_package": "mmcv-full",
+      "mmcv": "1.7.2",
+      "mmcv_ops": true,
+      "requirements": "environments/legacy-mmcv172.txt"
+    },
+    "diffusion-cu118": {
+      "python": "3.10",
+      "torch": "2.0.1",
+      "torchvision": "0.15.2",
+      "cuda": "11.8",
+      "index": "cu118",
+      "mmcv_package": "mmcv",
+      "mmcv": "2.0.1",
+      "mmcv_ops": true,
+      "requirements": "environments/diffusion-cu118.txt",
+      "deviations": [
+        "Python 3.10 for shared release helpers; small A100 gates passed, not full-paper reproduction.",
+        "Does not support RTX 5090. PyTorch nightly builds are not silently substituted."
+      ]
+    },
+    "fusionocc-cu113": {
+      "python": "3.8",
+      "torch": "1.10.0+cu113",
+      "torchvision": "0.11.1+cu113",
+      "cuda": "11.3",
+      "index": "cu113",
+      "mmcv_package": "mmcv-full",
+      "mmcv": "1.5.3",
+      "mmcv_ops": true,
+      "requirements": "environments/fusionocc-cu113.txt",
+      "deviations": [
+        "Portable OpenCV/YAPF pins avoid observed dependency conflicts; revalidate before full export."
+      ]
+    }
+  },
+  "models": {
+    "iiworld": {
+      "recipe": "legacy-mmcv172-cu128",
+      "directory": "EXIST/4D/II-World",
+      "package": "mmdet3d",
+      "editable": false,
+      "builds": [],
+      "env": {
+        "II_WORLD_MS_DEFORM_ATTN_IMPL": "pytorch"
+      },
+      "source_status": "included_subject_to_component_terms"
+    },
+    "geniedrive": {
+      "recipe": "legacy-mmcv172-cu128",
+      "directory": "EXIST/4D/GenieDrive/occ_gen",
+      "package": "mmdet3d",
+      "editable": false,
+      "builds": [],
+      "env": {
+        "GENIEDRIVE_MSDA_IMPL": "pytorch"
+      },
+      "source_status": "included_subject_to_component_terms"
+    },
+    "sparseworld-tc": {
+      "recipe": "legacy-mmcv172-cu128",
+      "directory": "EXIST/4D/SparseWorld",
+      "package": "mmdet3d",
+      "editable": false,
+      "builds": [
+        ".",
+        "mmdet3d/models/sparsedetectors/csrc"
+      ],
+      "env": {},
+      "source_status": "included_permission_unconfirmed"
+    },
+    "alocc": {
+      "recipe": "legacy-mmcv172-cu128",
+      "directory": "EXIST/3D/ALOcc",
+      "package": "mmdet3d",
+      "editable": false,
+      "builds": [
+        "."
+      ],
+      "extra_requirements": [
+        "torchmetrics==1.2.0"
+      ],
+      "env": {},
+      "source_status": "included_subject_to_component_terms"
+    },
+    "stcocc": {
+      "recipe": "legacy-mmcv172-cu128",
+      "directory": "EXIST/3D/STCOcc",
+      "package": "mmdet3d",
+      "editable": false,
+      "builds": [
+        "."
+      ],
+      "cpu_registry_check": false,
+      "env": {},
+      "source_status": "included_subject_to_component_terms"
+    },
+    "sdgocc": {
+      "recipe": "fusionocc-cu113",
+      "directory": "EXIST/3D/SDGOCC",
+      "package": "projects.mmdet3d_plugin",
+      "editable": false,
+      "dependency_directory": "EXIST/3D/SDGOCC/mmdetection3d",
+      "builds": [],
+      "manual_install_only": true,
+      "env": {},
+      "source_status": "included_permission_unconfirmed"
+    },
+    "effocc": {
+      "recipe": "legacy-mmcv172-cu128",
+      "directory": "EXIST/3D/EFFOcc",
+      "package": "mmdet3d",
+      "editable": false,
+      "builds": [
+        "."
+      ],
+      "extra_requirements": [
+        "spconv-cu120==2.3.6",
+        "cumm-cu120==0.4.11"
+      ],
+      "env": {},
+      "source_status": "included_subject_to_component_terms"
+    },
+    "flashocc": {
+      "recipe": "legacy-mmcv172-cu128",
+      "directory": "EXIST/3D/EFFOcc",
+      "package": "mmdet3d",
+      "editable": false,
+      "builds": [
+        "."
+      ],
+      "extra_requirements": [
+        "spconv-cu120==2.3.6",
+        "cumm-cu120==0.4.11"
+      ],
+      "env": {},
+      "source_status": "included_subject_to_component_terms"
+    },
+    "cvtocc": {
+      "recipe": "legacy-mmcv172-cu128",
+      "directory": "EXIST/3D/CVT-Occ",
+      "package": "projects.mmdet3d_plugin",
+      "editable": false,
+      "builds": [],
+      "dependency_directory": "EXIST/3D/CVT-Occ/dependencies/mmdetection3d",
+      "dependency_path_only": true,
+      "extra_requirements": [
+        "lyft-dataset-sdk==0.0.8"
+      ],
+      "env": {
+        "CVTOCC_WAYMO_ONLY": "1"
+      },
+      "source_status": "included_permission_unconfirmed"
+    },
+    "occworld": {
+      "recipe": "diffusion-cu118",
+      "directory": "EXIST/4D/OccWorld",
+      "package": "model",
+      "editable": false,
+      "builds": [],
+      "env": {
+        "OCCSTRESS_OCCWORLD_FUTURE_ALIGNED": "1"
+      },
+      "source_status": "included_subject_to_component_terms"
+    },
+    "come": {
+      "recipe": "diffusion-cu118",
+      "directory": "EXIST/4D/COME",
+      "package": "model",
+      "editable": false,
+      "builds": [],
+      "env": {
+        "OCCSTRESS_COME_FUTURE_ALIGNED": "1"
+      },
+      "source_status": "included_subject_to_component_terms"
+    },
+    "dome": {
+      "recipe": "diffusion-cu118",
+      "directory": "EXIST/4D/DOME",
+      "package": "model",
+      "editable": false,
+      "builds": [],
+      "env": {},
+      "source_status": "included_subject_to_component_terms"
+    },
+    "fusionocc": {
+      "recipe": "fusionocc-cu113",
+      "directory": "EXIST/3D/FusionOcc",
+      "package": "mmdet3d",
+      "editable": false,
+      "builds": [
+        "."
+      ],
+      "extra_requirements": [
+        "torch-scatter==2.1.2"
+      ],
+      "env": {},
+      "source_status": "included_permission_unconfirmed"
+    }
+  }
+}

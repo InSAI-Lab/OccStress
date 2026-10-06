@@ -1,0 +1,9 @@
+{
+  "note": "Synthetic token-only fixture. No real occupancy assets or benchmark scores.",
+  "records": [{
+    "sample_id": "demo-a", "anchor_token": "a", "scene_name": "synthetic-scene",
+    "history": [{"token": "h0"}, {"token": "h1"}, {"token": "h2"}, {"token": "h3"}],
+    "current_input": {"token": "a"}, "target": {"token": "a"},
+    "future_targets": [{"token": "f1"}, {"token": "f2"}, {"token": "f3"}, {"token": "f4"}, {"token": "f5"}, {"token": "f6"}]
+  }]
+}

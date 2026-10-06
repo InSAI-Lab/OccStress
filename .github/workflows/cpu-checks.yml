@@ -1,0 +1,27 @@
+name: CPU release checks
+on: [push, pull_request]
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e '.[construction]'
+      - run: python -m unittest discover -s tests -v
+      - run: python tools/check_formal_configs.py
+      - run: python tools/check_release.py --syntax
+      - run: python tools/check_documentation.py
+      - run: python tools/update_release_metadata.py
+      - run: python tools/build_public_release.py --output "$RUNNER_TEMP/occstress-public"
+      - run: python tools/check_release.py "$RUNNER_TEMP/occstress-public" --public --syntax
+      - run: python tools/check_documentation.py "$RUNNER_TEMP/occstress-public"
+      - run: python -m unittest discover -s tests -v
+        working-directory: ${{ runner.temp }}/occstress-public
+      - run: python examples/minimal_eval.py --output-dir "$RUNNER_TEMP/occstress-demo"

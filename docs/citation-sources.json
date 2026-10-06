@@ -1,0 +1,145 @@
+{
+  "checked_on": "2026-10-05",
+  "entries": [
+    {
+      "key": "chen2025alocc",
+      "source": "https://github.com/cdb342/ALOcc/blob/1bfd7de43b816a1a0e025e9a00a187bbf19daf15/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "ma2023cotr",
+      "source": "https://github.com/NotACracker/COTR/blob/4328e0abcd1360d950bef4d1c8cbe950a01aaced/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "li2023fbbev",
+      "source": "https://github.com/NVlabs/FB-BEV/blob/6e25469256d98e7fcb52cc43efe812dc2fd2b446/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "li2023fbocc",
+      "source": "https://github.com/NVlabs/FB-BEV/blob/6e25469256d98e7fcb52cc43efe812dc2fd2b446/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "zhang2024fusionocc",
+      "source": "https://github.com/ShuoZhang-code/FusionOcc/blob/83ded3884b98b299d35d636a91e9aa2a92d89221/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "ming2024occfusion",
+      "source": "https://github.com/DanielMing123/OccFusion/blob/193a3c3cb38a8ca8978be54c98e436eb96b5e8c3/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "wang2024panoocc",
+      "source": "https://github.com/Robertwyq/PanoOcc/blob/3d93b119fcced35612af05587b395e8b38d8271f/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "duan2025sdgocc",
+      "source": "https://github.com/DzpLab/SDGOCC/blob/bd63c00b2ba4cbd120077a8a468b8e36a7749154/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "liu2023fully",
+      "source": "https://github.com/MCG-NJU/SparseOcc/blob/af4d9df83bfd1b82c2b095fca793ff7ba49d5e9f/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "liao2025stcocc",
+      "source": "https://github.com/lzzzzzm/STCOcc/blob/23a4a346a30ab1242ef99a54bac14d4c4c67e08c/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "li2024viewformer",
+      "source": "https://github.com/ViewFormerOcc/ViewFormer-Occ/blob/bba311100210ec34bd79e256acec1a61e238df0b/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "zheng2023occworld",
+      "source": "https://github.com/wzzheng/OccWorld/blob/1ee7f77ecc4c984a4f7f6411d95c2e6e73806b6e/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "yang2025geniedrive",
+      "source": "https://github.com/Huster-YZY/GenieDrive/blob/da48a529ffbe14136688e9b7a56f5d1061c366c5/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "gu2024dome",
+      "source": "https://github.com/gusongen/DOME/blob/02677f93cf5056daaceb8ccf52d328bdf3635183/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "ye2024cvt",
+      "source": "https://github.com/Tsinghua-MARS-Lab/CVT-Occ/blob/42c1d4e49d5f170840e991db1c3d73f56791d53f/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "dang2025sparseworld",
+      "source": "https://github.com/MSunDYY/SparseWorld/blob/14f5fe3bdd3428002d913988fbfd9b653a1a207e/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "xie2025benchmarking",
+      "source": "https://github.com/Daniel-xsy/RoboBEV/blob/3a32edaba9434dc27791bd25a1168951d091bd89/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "kong2023robo3d",
+      "source": "https://github.com/worldbench/Robo3D/blob/481a3b8634b2d291b84736cab1b546ed266efafa/README.md",
+      "basis": "upstream_recommended_bibtex"
+    },
+    {
+      "key": "li2022bevformer",
+      "source": "https://github.com/fundamentalvision/BEVFormer/blob/66b65f3a1f58caf0507cb2a971b9c0e7f842376c/README.md",
+      "basis": "upstream_recommended_bibtex_missing_comma_repaired"
+    },
+    {
+      "key": "tian2023occ3d",
+      "source": "https://github.com/Tsinghua-MARS-Lab/Occ3D",
+      "basis": "manuscript_bibliography_with_primary_source_link"
+    },
+    {
+      "key": "caesar2020nuscenes",
+      "source": "https://openaccess.thecvf.com/content_CVPR_2020/html/Caesar_nuScenes_A_Multimodal_Dataset_for_Autonomous_Driving_CVPR_2020_paper.html",
+      "basis": "manuscript_bibliography_with_primary_source_link"
+    },
+    {
+      "key": "sun2020scalability",
+      "source": "https://openaccess.thecvf.com/content_CVPR_2020/html/Sun_Scalability_in_Perception_for_Autonomous_Driving_Waymo_Open_Dataset_CVPR_2020_paper.html",
+      "basis": "manuscript_bibliography_with_primary_source_link"
+    },
+    {
+      "key": "wang2025uniocc",
+      "source": "https://openaccess.thecvf.com/content/ICCV2025/html/Wang_UniOcc_A_Unified_Benchmark_for_Occupancy_Forecasting_and_Prediction_in_ICCV_2025_paper.html",
+      "basis": "manuscript_bibliography_with_primary_source_link"
+    },
+    {
+      "key": "liao2025i2",
+      "source": "https://github.com/lzzzzzm/II-World",
+      "basis": "manuscript_bibliography_with_primary_source_link"
+    },
+    {
+      "key": "shicome",
+      "source": "https://arxiv.org/abs/2506.13260",
+      "basis": "manuscript_bibliography_with_primary_source_link"
+    },
+    {
+      "key": "effocc2025shi",
+      "source": "https://doi.org/10.1109/IROS60139.2025.11247287",
+      "basis": "manuscript_bibliography_with_primary_source_link"
+    },
+    {
+      "key": "yu2023flashocc",
+      "source": "https://arxiv.org/abs/2311.12058",
+      "basis": "manuscript_bibliography_with_primary_source_link"
+    },
+    {
+      "key": "dosovitskiy2017carla",
+      "source": "https://proceedings.mlr.press/v78/dosovitskiy17a.html",
+      "basis": "primary_paper_metadata"
+    }
+  ]
+}

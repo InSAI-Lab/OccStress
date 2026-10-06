@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "generated_from": "configs/evaluation_contract.json",
+  "future_horizons_seconds": [
+    0.5,
+    1,
+    1.5,
+    2,
+    2.5,
+    3
+  ],
+  "note": "Adapter capabilities and internal validation are distinct from public source availability. See distribution.json.",
+  "methods": [
+    {
+      "id": "occworld",
+      "directory": "EXIST/4D/OccWorld",
+      "entrypoints": [
+        "eval_metric_stp3.py",
+        "tools/test_carla_occstress.py"
+      ],
+      "configuration": "config/occworld_occstress.py",
+      "input_offsets_seconds": [
+        -2,
+        -1.5,
+        -1,
+        -0.5,
+        0
+      ],
+      "tracks": [
+        "manual",
+        "camera_upstream",
+        "point_upstream"
+      ],
+      "status": "small_sample_forecaster_gpu_gates_passed_not_paper_reproduction",
+      "source_status": "included_subject_to_component_terms"
+    },
+    {
+      "id": "iiworld",
+      "directory": "EXIST/4D/II-World",
+      "entrypoints": [
+        "tools/test.py",
+        "tools/test_waymo_occstress.py"
+      ],
+      "configuration": "configs/world_model/ii_generate_world_occstress.py",
+      "input_offsets_seconds": [
+        -2,
+        -1.5,
+        -1,
+        -0.5,
+        0
+      ],
+      "tracks": [
+        "manual",
+        "camera_upstream",
+        "point_upstream"
+      ],
+      "status": "small_sample_forecaster_gpu_gates_passed_not_paper_reproduction",
+      "source_status": "included_subject_to_component_terms"
+    },
+    {
+      "id": "come",
+      "directory": "EXIST/4D/COME",
+      "entrypoints": [
+        "tools/test_carla_occstress.py",
+        "tools/test_diffusion_control.py",
+        "tools/test_waymo_occstress.py"
+      ],
+      "configuration": "configs/local_eval_controlnet_occstress.py",
+      "input_offsets_seconds": [
+        -1.5,
+        -1,
+        -0.5,
+        0
+      ],
+      "tracks": [
+        "manual",
+        "camera_upstream",
+        "point_upstream"
+      ],
+      "status": "small_sample_forecaster_gpu_gates_passed_not_paper_reproduction",
+      "source_status": "included_subject_to_component_terms"
+    },
+    {
+      "id": "geniedrive",
+      "directory": "EXIST/4D/GenieDrive/occ_gen",
+      "entrypoints": [
+        "tools/test_occstress.py"
+      ],
+      "configuration": "configs/world_model/vae_e2e_occstress.py",
+      "input_offsets_seconds": [
+        -1.5,
+        -1,
+        -0.5,
+        0
+      ],
+      "tracks": [
+        "manual",
+        "camera_upstream",
+        "point_upstream"
+      ],
+      "status": "small_sample_forecaster_gpu_gates_passed_not_paper_reproduction",
+      "source_status": "included_subject_to_component_terms"
+    },
+    {
+      "id": "dome",
+      "directory": "EXIST/4D/DOME",
+      "entrypoints": [
+        "tools/eval_occstress.py"
+      ],
+      "configuration": "config/train_dome.py",
+      "input_offsets_seconds": [
+        -1.5,
+        -1,
+        -0.5,
+        0
+      ],
+      "tracks": [
+        "manual",
+        "camera_upstream",
+        "point_upstream"
+      ],
+      "status": "small_sample_forecaster_gpu_gates_passed_not_paper_reproduction",
+      "source_status": "included_subject_to_component_terms"
+    },
+    {
+      "id": "sparseworld-tc",
+      "directory": "EXIST/4D/SparseWorld",
+      "entrypoints": [
+        "tools/carla_occstress_eval.py",
+        "tools/occstress_eval.py",
+        "tools/waymo_occstress_eval.py"
+      ],
+      "configuration": "configs/sparseworld/nuscenes-temporal/sparseworld-traj-finetune.py",
+      "input_offsets_seconds": [
+        -2,
+        -1.5,
+        -1,
+        -0.5,
+        0
+      ],
+      "tracks": [
+        "camera_direct"
+      ],
+      "status": "small_sample_forecaster_gpu_gates_passed_not_paper_reproduction",
+      "source_status": "included_permission_unconfirmed"
+    }
+  ]
+}

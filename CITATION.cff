@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "Please cite OccStress and the original methods and datasets used; see docs/CITATIONS.md."
+title: "OccStress: Stress-Testing the 4D Occupancy Forecasting Chain"
+type: software
+repository-code: "https://github.com/InSAI-Lab/OccStress"
+authors:
+  - family-names: Zheng
+    given-names: Yu
+  - family-names: Hu
+    given-names: Jie
+  - family-names: Xiong
+    given-names: Jiaqi
+  - family-names: Liu
+    given-names: Ruiping
+  - family-names: Zheng
+    given-names: Junwei
+  - family-names: Yang
+    given-names: Kailun
+  - family-names: Zhang
+    given-names: Jiaming
+preferred-citation:
+  type: conference-paper
+  title: "OccStress: Stress-Testing the 4D Occupancy Forecasting Chain"
+  authors:
+    - family-names: Zheng
+      given-names: Yu
+    - family-names: Hu
+      given-names: Jie
+    - family-names: Xiong
+      given-names: Jiaqi
+    - family-names: Liu
+      given-names: Ruiping
+    - family-names: Zheng
+      given-names: Junwei
+    - family-names: Yang
+      given-names: Kailun
+    - family-names: Zhang
+      given-names: Jiaming
+  collection-title: "Advances in Neural Information Processing Systems"
+  year: 2026
+  url: "https://arxiv.org/abs/2512.15621"
+  notes: "Evaluations and Datasets Track."

@@ -1,0 +1,73 @@
+# Copyright (c) OpenMMLab. All rights reserved.
+import mmcv
+
+import mmdet
+import mmseg
+import torch
+from .version import __version__, short_version
+
+
+def digit_version(version_str):
+    digit_version = []
+    for x in version_str.split('.'):
+        if x.isdigit():
+            digit_version.append(int(x))
+        elif x.find('rc') != -1:
+            patch_version = x.split('rc')
+            digit_version.append(int(patch_version[0]) - 1)
+            digit_version.append(int(patch_version[1]))
+    return digit_version
+
+
+mmcv_minimum_version = '1.5.2'
+mmcv_maximum_version = '1.7.2'
+mmcv_version = digit_version(mmcv.__version__)
+
+
+assert (mmcv_version >= digit_version(mmcv_minimum_version)
+        and mmcv_version <= digit_version(mmcv_maximum_version)), \
+    f'MMCV=={mmcv.__version__} is used but incompatible. ' \
+    f'Please install mmcv>={mmcv_minimum_version}, <={mmcv_maximum_version}.'
+
+if digit_version(torch.__version__.split('+')[0]) >= [2, 8, 0]:
+    from mmcv.parallel import MMDistributedDataParallel
+    from mmcv.parallel import _functions as mmcv_parallel_functions
+    from torch.nn.parallel._functions import _get_stream as torch_get_stream
+
+    def get_stream_compat(device):
+        if isinstance(device, int):
+            device = torch.device('cuda', device)
+        return torch_get_stream(device)
+
+    mmcv_parallel_functions._get_stream = get_stream_compat
+
+    def run_ddp_forward_compat(self, *inputs, **kwargs):
+        with self._inside_ddp_forward():
+            if self.device_ids:
+                inputs, kwargs = self.to_kwargs(
+                    inputs, kwargs, self.device_ids[0]
+                )
+                return self.module(*inputs[0], **kwargs[0])
+            return self.module(*inputs, **kwargs)
+
+    MMDistributedDataParallel._run_ddp_forward = run_ddp_forward_compat
+
+mmdet_minimum_version = '2.24.0'
+mmdet_maximum_version = '3.0.0'
+mmdet_version = digit_version(mmdet.__version__)
+assert (mmdet_version >= digit_version(mmdet_minimum_version)
+        and mmdet_version <= digit_version(mmdet_maximum_version)), \
+    f'MMDET=={mmdet.__version__} is used but incompatible. ' \
+    f'Please install mmdet>={mmdet_minimum_version}, ' \
+    f'<={mmdet_maximum_version}.'
+
+mmseg_minimum_version = '0.20.0'
+mmseg_maximum_version = '1.0.0'
+mmseg_version = digit_version(mmseg.__version__)
+assert (mmseg_version >= digit_version(mmseg_minimum_version)
+        and mmseg_version <= digit_version(mmseg_maximum_version)), \
+    f'MMSEG=={mmseg.__version__} is used but incompatible. ' \
+    f'Please install mmseg>={mmseg_minimum_version}, ' \
+    f'<={mmseg_maximum_version}.'
+
+__all__ = ['__version__', 'short_version']

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-06",
+  "review_type": "source_evidence_and_release_routing_not_legal_certification",
+  "dataset_repository_url": "https://huggingface.co/datasets/insailab/OccStress",
+  "repository_anonymous_probe": "HTTP_200_package_index_and_sample_archives_2026-10-06",
+  "public_upload_authorized": true,
+  "authorization_scope": "release_owner_approved_planned_derived_packages_only_not_source_provider_legal_clearance",
+  "weights_in_dataset_repository": false,
+  "repository_gating_decision": "owner_selected_public_links_with_source_terms_not_additional_manual_approval",
+  "excluded_from_dataset_packages": [
+    "external/**", "private/**", "checkpoints/**", "*.pth", "*.ckpt",
+    "original_images", "original_pointclouds", "official_clean_gt", "training_caches"
+  ],
+  "datasets": {
+    "OccStress-nuScenes": {
+      "scope": ["manual", "upstream", "position_sweep", "protocols", "metadata"],
+      "decision": "conditional_noncommercial_distribution",
+      "terms": ["https://www.nuscenes.org/terms-of-use", "https://github.com/Tsinghua-MARS-Lab/Occ3D#license"],
+      "remaining": ["confirm_current_nuscenes_dataset_terms", "retain_Occ3D_notice_and_source_attribution", "review_terms_for_included_upstream_predictions"],
+      "original_data": "user_obtains_from_source",
+      "automatic_upload_allowed": true
+    },
+    "OccStress-Waymo": {
+      "scope": ["manual", "upstream", "protocols", "metadata"],
+      "decision": "registered_recipient_distribution_for_dataset_modifications",
+      "artifact_classification": {
+        "manual_GT_derived_labels": "conservatively_treat_as_dataset_modifications",
+        "upstream_model_predictions": "separate_output_terms_review_required",
+        "protocols_and_controls": "distinguish_original_protocol_logic_from_copied_source_metadata"
+      },
+      "terms": ["https://waymo.com/open/terms/", "https://github.com/Tsinghua-MARS-Lab/Occ3D#license"],
+      "remaining": ["verify_recipient_Waymo_registration_and_terms_acceptance", "include_applicable_agreement_and_attribution", "classify_model_outputs_separately_from_dataset_modifications"],
+      "model_weights": "conditional_model_distribution_not_a_blanket_ban",
+      "original_data": "user_obtains_from_source",
+      "automatic_upload_allowed": true
+    },
+    "OccStress-CARLA": {
+      "scope": ["manual", "upstream", "protocols", "metadata"],
+      "decision": "conditional_distribution_under_source_dataset_terms",
+      "source": "https://huggingface.co/datasets/tasl-lab/uniocc/tree/e81775b36e376f591a1145ca054b72fd541a67eb",
+      "dataset_card_license": "mit",
+      "source_frames": 360,
+      "remaining": ["retain_UniOcc_notice_and_identify_modifications", "check_additional_simulator_asset_or_component_terms", "review_experiment_checkpoint_provenance_for_reexport"],
+      "original_data": "user_obtains_from_source",
+      "automatic_upload_allowed": true
+    }
+  },
+  "checkpoint_policy": {
+    "official_weights": "link_to_authors_instead_of_mirroring",
+    "experiment_weights": "user_supplied_until_identity_and_terms_reviewed",
+    "optional_author_owned_mirrors": "google_drive_after_explicit_clearance",
+    "forecaster_weights_required_for": "running_downstream_models",
+    "upstream_weights_required_for": "regenerating_3D_exports_not_consuming_released_occupancy",
+    "unknown_provenance": "do_not_label_as_official_or_substitute_an_unverified_model_zoo_file"
+  }
+}

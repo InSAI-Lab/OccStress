@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "contract_id": "occstress-f6-release-v1",
+  "status": "small_sample_forecaster_gpu_gates_passed_not_paper_reproduction",
+  "grid": {"shape": [200, 200, 16], "voxel_size_m": 0.4, "range_m": [-40, -40, -1, 40, 40, 5.4], "empty_label": 17},
+  "classes": ["others", "barrier", "bicycle", "bus", "car", "construction_vehicle", "motorcycle", "pedestrian", "traffic_cone", "trailer", "truck", "driveable_surface", "other_flat", "sidewalk", "terrain", "manmade", "vegetation", "free"],
+  "timeline": {
+    "rate_hz": 2,
+    "canonical_observed_offsets_seconds": [-2, -1.5, -1, -0.5, 0],
+    "future_horizons_seconds": [0.5, 1, 1.5, 2, 2.5, 3],
+    "paper_average_horizons_seconds": [1, 2, 3],
+    "current_reconstruction_in_future_metrics": false,
+    "position_sweep_slots": [-4, -3, -2, -1, 0],
+    "outside_model_window": "not_observed; retain placeholder and exclude from common-visible-position comparisons"
+  },
+  "temporal_protocols": {
+    "current_only": {"slots": [0], "legacy_filename": "current"},
+    "recent_burst": {"slots": [-1, 0], "legacy_filename": "history_k1"},
+    "history_only": {"slots": [-4, -3, -2, -1], "legacy_filename": "all_frame"}
+  },
+  "metrics": {
+    "units": "percent",
+    "voxel_mask": "all valid canonical voxels, no camera/lidar visibility mask in downstream OccStress evaluation",
+    "ignore_label": 255,
+    "occupied_labels": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "cross_dataset_miou": "present-GT occupied classes, determined after summing all scene confusion matrices; retain zero-IoU classes",
+    "native_metric_caveat": "Native legacy II-World/GenieDrive logs can use a different absent/zero-class rule. Never silently mix them with present-class summaries. Recompute from raw counts and label the metric policy.",
+    "binary_iou": "occupied versus free; occupancy TP/(TP+FP+FN)",
+    "shard_merge": "sum confusion matrices/counts first, then compute IoU; never average shard mIoUs",
+    "horizon_aggregation": "six horizons retained; paper score is mean over 1/2/3 seconds, not average_miou over all six",
+    "robust_score": "macro-average across corrupted conditions in the declared source/track; exclude clean and report traffic separately",
+    "manual_counts": {"clean": 1, "corrupted_nontraffic": 36, "traffic": 1},
+    "upstream_counts_per_source_and_stressor": {"clean": 1, "corrupted": 72}
+  },
+  "targets": {
+    "nontraffic": "paired clean future occupancy",
+    "traffic": "mirror occupancy, targets, poses, trajectory and left/right command consistently",
+    "training_on_target_validation": false
+  },
+  "datasets": {
+    "nuscenes": {"anchors": 4519, "root_env": "OCCSTRESS_DATA_ROOT", "class_mapping": "identity Occ3D-18", "coordinates": "Occ3D right-handed x-forward/y-left/z-up"},
+    "waymo": {"anchors": 5978, "scenes": 202, "selected_frames": 7998, "root_env": "OCCSTRESS_DATA_ROOT", "class_mapping_source": "scripts/waymo/waymo_occstress_common.py", "raw_to_occ3d": {"0": 0, "1": 4, "2": 7, "3": 15, "4": 2, "5": 15, "6": 15, "7": 8, "8": 2, "9": 6, "10": 15, "11": 16, "12": 16, "13": 11, "14": 13, "23": 17}, "coordinates": "official Occ3D-Waymo conversion; preserve II-World official Waymo RT/control path"},
+    "carla": {"anchors": 330, "scenes": 3, "selected_frames": 360, "root_env": "OCCSTRESS_DATA_ROOT", "class_mapping_source": "scripts/carla/build_carla_occstress.py", "raw_to_occ3d": {"0": 0, "1": 4, "2": 2, "3": 6, "4": 7, "5": 8, "6": 16, "7": 11, "8": 14, "9": 15, "10": 17}, "coordinates": "OccStress-CARLA right-handed model view; not raw left-handed CARLA"}
+  },
+  "downstream_checkpoint_policy": "fixed nuScenes checkpoint; Waymo/CARLA zero-shot; resource availability and checkpoint identity are recorded separately",
+  "models": {
+    "occworld": {
+      "input_offsets_seconds": [-2, -1.5, -1, -0.5, 0], "input_modality": "occupancy", "control": "GT command; autoregressive predicted ego motion",
+      "environment": "occworld", "directory": "EXIST/4D/OccWorld",
+      "required_env": {"OCCSTRESS_OCCWORLD_FUTURE_ALIGNED": "1"},
+      "configs": {"nuscenes": "config/occworld_occstress.py", "waymo": "config/occworld_occstress.py", "carla": "config/occworld_occstress.py"},
+      "entrypoints": {"nuscenes": "eval_metric_stp3.py", "waymo": "tools/test_carla_occstress.py", "carla": "tools/test_carla_occstress.py"},
+      "tracks": ["manual", "camera_upstream", "point_upstream"]
+    },
+    "iiworld": {
+      "input_offsets_seconds": [-2, -1.5, -1, -0.5, 0], "input_modality": "occupancy", "control": "nuScenes official control metadata; Waymo fixed command [1,0,0], zero LCF and GT ego poses; CARLA GT command, zero LCF and GT poses",
+      "environment": "iiworld", "directory": "EXIST/4D/II-World",
+      "required_env": {"II_WORLD_MS_DEFORM_ATTN_IMPL": "pytorch"},
+      "configs": {"nuscenes": "configs/world_model/ii_generate_world_occstress.py", "waymo": "configs/world_model/ii_generate_world_waymo_occstress.py", "carla": "configs/world_model/ii_generate_world_carla_occstress.py"},
+      "tokenizer_configs": {"nuscenes": "configs/scene_tokenizer/ii_scene_tokenizer_occstress.py", "waymo": "configs/scene_tokenizer/ii_scene_tokenizer_waymo_occstress.py", "carla": "configs/scene_tokenizer/ii_scene_tokenizer_carla_occstress.py"},
+      "entrypoints": {"nuscenes": "tools/test.py", "waymo": "tools/test_waymo_occstress.py", "carla": "tools/test_waymo_occstress.py"},
+      "cache_policy": "Waymo/CARLA current tokens scoped to protocol+scene shard; future cache keyed by base/checkpoint/dataset/traffic mode; streamed forecast metrics; cleanup current tokens after success",
+      "tracks": ["manual", "camera_upstream", "point_upstream"]
+    },
+    "come": {
+      "input_offsets_seconds": [-1.5, -1, -0.5, 0], "input_modality": "occupancy", "control": "GT future trajectory and command",
+      "environment": "come", "directory": "EXIST/4D/COME", "required_env": {"OCCSTRESS_COME_FUTURE_ALIGNED": "1"},
+      "configs": {"nuscenes": "configs/local_eval_controlnet_occstress.py", "waymo": "configs/local_eval_controlnet_waymo_occstress.py", "carla": "configs/local_eval_controlnet_carla_occstress.py"},
+      "additional_configs": ["configs/unet/unet_aligned_past2s_future_3s.py", "configs/train_dome_v5_invisible_fixed_mask.py"],
+      "entrypoints": {"nuscenes": "tools/test_diffusion_control.py", "waymo": "tools/test_waymo_occstress.py", "carla": "tools/test_carla_occstress.py"},
+      "sampling_steps": 20,
+      "tracks": ["manual", "camera_upstream", "point_upstream"]
+    },
+    "geniedrive": {
+      "input_offsets_seconds": [-1.5, -1, -0.5, 0], "input_modality": "occupancy", "control": "GT future trajectory and command",
+      "environment": "geniedrive", "directory": "EXIST/4D/GenieDrive/occ_gen", "required_env": {"GENIEDRIVE_MSDA_IMPL": "pytorch"},
+      "configs": {"nuscenes": "configs/world_model/vae_e2e_occstress.py", "waymo": "configs/world_model/vae_e2e_occstress_waymo.py", "carla": "configs/world_model/vae_e2e_occstress_carla.py"},
+      "entrypoints": {"nuscenes": "tools/test_occstress.py", "waymo": "tools/test_occstress.py", "carla": "tools/test_occstress.py"},
+      "tracks": ["manual", "camera_upstream", "point_upstream"]
+    },
+    "dome": {
+      "input_offsets_seconds": [-1.5, -1, -0.5, 0], "input_modality": "occupancy", "control": "GT future ego-motion poses",
+      "environment": "dome", "directory": "EXIST/4D/DOME", "required_env": {},
+      "configs": {"nuscenes": "config/train_dome.py", "waymo": "config/train_dome.py", "carla": "config/train_dome.py"},
+      "entrypoints": {"nuscenes": "tools/eval_occstress.py", "waymo": "tools/eval_occstress.py", "carla": "tools/eval_occstress.py"},
+      "sampling_steps": 20, "noise_seed": "sha256(base_seed:anchor_token)",
+      "tracks": ["manual", "camera_upstream", "point_upstream"]
+    },
+    "sparseworld-tc": {
+      "input_offsets_seconds": [-2, -1.5, -1, -0.5, 0], "input_modality": "camera", "control": "native trajectory-conditioned direct-camera path; no occupancy input adapter",
+      "environment": "sparseworld-tc", "directory": "EXIST/4D/SparseWorld", "required_env": {},
+      "configs": {"nuscenes": "configs/sparseworld/nuscenes-temporal/sparseworld-traj-finetune.py", "waymo": "configs/sparseworld/nuscenes-temporal/sparseworld-traj-finetune.py", "carla": "configs/sparseworld/nuscenes-temporal/sparseworld-traj-finetune.py"},
+      "entrypoints": {"nuscenes": "tools/occstress_eval.py", "waymo": "tools/waymo_occstress_eval.py", "carla": "tools/carla_occstress_eval.py"},
+      "tracks": ["camera_direct"]
+    }
+  },
+  "legacy": {
+    "excluded_env_values": {"OCCSTRESS_OCCWORLD_FUTURE_ALIGNED": ["0", "false", "no"], "OCCSTRESS_COME_FUTURE_ALIGNED": ["0", "false", "no"]},
+    "unlisted_configs": "legacy, upstream-reference or exploratory; not an authorized formal benchmark entry",
+    "reason": "Old current-plus-five-future alignment and experimental history gates must not enter formal F6 summaries."
+  },
+  "runtime_gate": {
+    "fresh_environment": "passed_for_included_forecasters_on_A100",
+    "checkpoint_loading": "passed_for_included_forecasters_on_A100",
+    "clean_and_corruption_smoke": "passed_two_anchors_per_setting_six_horizons",
+    "paper_reproduction": "not_rerun_for_source_release",
+    "scope_document": "docs/CODE_RELEASE_STATUS.md",
+    "models": ["iiworld", "geniedrive", "occworld", "come", "dome"],
+    "datasets": ["nuscenes", "waymo", "carla"]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "status": "optional_not_populated",
+  "note": "Optional audited summaries, not a code-release gate. No full paper rerun is required. Future entries must state metric policy and provenance; historical scores must not be relabeled as present-class scores. Datasets and checkpoints remain external.",
+  "results": []
+}
