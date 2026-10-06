@@ -283,3 +283,15 @@ Original OccStress code is released under [MIT](LICENSE). Third-party code,
 adapted corruption operators, data and checkpoints retain their own terms;
 see [third-party notices](THIRD_PARTY_NOTICES.md) and the
 [license inventory](docs/LICENSES_AND_CITATIONS.md).
+
+## Community
+
+Join our Feishu community for discussions; we chose Feishu so new members can access the chat history.
+
+<p align="center">
+  <a href="https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=cebr8f3e-2595-4b90-8fd2-fa18b8e5b98b&amp;qr_code=true"><img src="https://img.shields.io/badge/Join_Feishu_Community-3370FF?style=for-the-badge" alt="Join Feishu Community"></a>
+</p>
+
+<p align="center">
+  <a href="https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=cebr8f3e-2595-4b90-8fd2-fa18b8e5b98b&amp;qr_code=true"><img src="docs/assets/feishu-community.png" width="360" alt="QR code to join the OccStress Feishu community"></a>
+</p>

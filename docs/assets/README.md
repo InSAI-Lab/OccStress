@@ -7,6 +7,11 @@ These images are faithful rasterizations of the existing OccStress manuscript
 artwork, not regenerated scientific results. The overview is displayed in the
 repository README. See the [paper](https://arxiv.org/abs/2512.15621) for context.
 
+## Community Invitation
+
+- `feishu-community.png`: the authors' Feishu group invitation image, preserved
+  without modification.
+
 ## README Badge Icons
 
 The README uses Shields.io badges with arXiv and Hugging Face brand marks.
